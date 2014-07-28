@@ -18,15 +18,12 @@
 
     <style>
       #example {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 0 50px;
-      }
-      #example input {
         display: block;
         width: 100%;
+        margin: 30px 0 20px 0;
         padding: 5px 15px;
         font-size: 36px;
+        border: none;
         border-radius: 10px;
       }
     </style>
@@ -60,9 +57,7 @@
 
         <p>Simple jQuery plugin that mimics text being entered into the placeholder of an input box to give users examples of what can be entered</p>
 
-        <div id="example">
-          <input type="text" />
-        </div>
+        <input type="text" id="example" />
 
         <h2>
           <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>
@@ -136,7 +131,7 @@
     <script src="javascripts/exempli-gratia.min.js"></script>
     <script>
       $(document).ready(function() {
-        $('#example input[type=text]').eg({
+        $('#example').eg({
           examples: [
             "you could type something like this",
             "or maybe this",
