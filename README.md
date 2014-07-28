@@ -1,7 +1,9 @@
-Exempli Gratia
-==============
+Exempli Gratia (e.g.)
+=====================
 
 Simple jQuery plugin that mimics text being entered into the placeholder of an input box to give users examples of what can be entered
+
+________________________________________________________________________________________
 
 Usage
 -----
@@ -15,6 +17,8 @@ $('selector').eg({
 	]	
 });
 ```
+
+________________________________________________________________________________________
 
 Available Options
 -----------------
