@@ -1,5 +1,5 @@
 /* ---- Exempli Gratia (e.g.) ---- */
-/* Latin: for the sake of example  */
+/*     for the sake of example     */
 
 /*     Nolan Neustaeter | 2014     */
 
@@ -15,10 +15,10 @@ to give users examples of what can be entered in this box
 
 		var settings = $.extend({
 			// defaults
-			speed:      100,  // typing rate
+			delay:      100,  // delay between characters being added
 			variance:   100,  // randomness to simulate human typing
-			blinkSpeed: 500,  // time to wait between examples
-			blinks:       5,  // number of times that the cursor blinks after each example
+			blinkDelay: 500,  // delay for the caret animation
+			blinks:       5,  // number of times that the caret blinks after each example
 			examples: [
 				'Waffles are delicious',
 				'Sometimes I forget how to type',
@@ -37,13 +37,13 @@ to give users examples of what can be entered in this box
 
 			if (queue.length === 0) {
 				populateQueue();
-				setTimeout($.proxy(wait, this), settings.blinkSpeed);
+				setTimeout($.proxy(wait, this), settings.blinkDelay);
 			} else if (queue[0].length === 0) {
 				queue.shift();
-				setTimeout($.proxy(wait, this), settings.blinkSpeed);
+				setTimeout($.proxy(wait, this), settings.blinkDelay);
 			} else {
 				this.attr('placeholder', this.attr('placeholder') + queue[0].shift());
-				setTimeout($.proxy(advance, this), settings.speed + Math.floor((Math.random() * settings.variance - (settings.variance / 2))));
+				setTimeout($.proxy(advance, this), settings.delay + Math.floor((Math.random() * settings.variance - (settings.variance / 2))));
 			}
 
 			
@@ -62,7 +62,7 @@ to give users examples of what can be entered in this box
 					this.attr('placeholder', this.attr('placeholder') + '|');
 				}
 				blinked++;
-				setTimeout($.proxy(wait, this), settings.blinkSpeed);
+				setTimeout($.proxy(wait, this), settings.blinkDelay);
 			}
 		}
 
