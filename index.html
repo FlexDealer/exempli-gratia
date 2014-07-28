@@ -16,6 +16,21 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <style>
+      #example {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 50px;
+      }
+      #example input {
+        display: block;
+        width: 100%;
+        padding: 5px 15px;
+        font-size: 36px;
+        border-radius: 10px;
+      }
+    </style>
+
   </head>
   <body>
       <div id="header">
@@ -39,69 +54,96 @@
         </div>
 
         <h1>
-<a name="exempli-gratia" class="anchor" href="#exempli-gratia"><span class="octicon octicon-link"></span></a>Exempli Gratia</h1>
+          <a name="exempli-gratia" class="anchor" href="#exempli-gratia"><span class="octicon octicon-link"></span></a>
+          Exempli Gratia
+        </h1>
 
-<p>Simple jQuery plugin that mimics text being entered into the placeholder of an input box to give users examples of what can be entered</p>
+        <p>Simple jQuery plugin that mimics text being entered into the placeholder of an input box to give users examples of what can be entered</p>
 
-<h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+        <div id="example">
+          <input type="text" />
+        </div>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'selector'</span><span class="p">).</span><span class="nx">eg</span><span class="p">({</span>
+        <h2>
+          <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>
+          Usage
+        </h2>
+
+        <div class="highlight highlight-javascript">
+<pre><span class="nx">$</span><span class="p">(</span><span class="s1">'selector'</span><span class="p">).</span><span class="nx">eg</span><span class="p">({</span>
     <span class="nx">examples</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"you could type something like this"</span><span class="p">,</span>
         <span class="s2">"or maybe this"</span><span class="p">,</span>
         <span class="s2">"but never type anything like this"</span>
     <span class="p">]</span>   
 <span class="p">});</span>
-</pre></div>
+</pre>
+        </div>
 
-<h2>
-<a name="available-options" class="anchor" href="#available-options"><span class="octicon octicon-link"></span></a>Available Options</h2>
+        <h2>
+          <a name="available-options" class="anchor" href="#available-options"><span class="octicon octicon-link"></span></a>
+          Available Options
+        </h2>
 
-<table>
-<thead><tr>
-<th>Option</th>
-<th>Type</th>
-<th align="right">Default</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>delay</td>
-<td>number</td>
-<td align="right">100</td>
-<td>delay between characters being added</td>
-</tr>
-<tr>
-<td>variance</td>
-<td>number</td>
-<td align="right">100</td>
-<td>randomness added to delay to simulate human typing</td>
-</tr>
-<tr>
-<td>blinkDelay</td>
-<td>number</td>
-<td align="right">500</td>
-<td>delay for the caret animation</td>
-</tr>
-<tr>
-<td>blinks</td>
-<td>number</td>
-<td align="right">5</td>
-<td>number of times that the caret blinks after each example</td>
-</tr>
-<tr>
-<td>examples</td>
-<td>array</td>
-<td align="right">[]</td>
-<td>phrases to cycle through in the placeholder</td>
-</tr>
-</tbody>
-</table>
+        <table>
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Type</th>
+              <th align="right">Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>delay</td>
+              <td>number</td>
+              <td align="right">100</td>
+              <td>delay between characters being added</td>
+            </tr>
+            <tr>
+              <td>variance</td>
+              <td>number</td>
+              <td align="right">100</td>
+              <td>randomness added to delay to simulate human typing</td>
+            </tr>
+            <tr>
+              <td>blinkDelay</td>
+              <td>number</td>
+              <td align="right">500</td>
+              <td>delay for the caret animation</td>
+            </tr>
+            <tr>
+              <td>blinks</td>
+              <td>number</td>
+              <td align="right">5</td>
+              <td>number of times that the caret blinks after each example</td>
+            </tr>
+            <tr>
+              <td>examples</td>
+              <td>array</td>
+              <td align="right">[]</td>
+              <td>phrases to cycle through in the placeholder</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
 
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/exempli-gratia.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#example input[type=text]').eg({
+          examples: [
+            "you could type something like this",
+            "or maybe this",
+            "but never type anything like this"
+          ] 
+        });
+      });
+    </script>
   </body>
 </html>
