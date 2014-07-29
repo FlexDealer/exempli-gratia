@@ -3,6 +3,8 @@ Exempli Gratia (e.g.)
 
 Simple jQuery plugin that mimics text being entered into the placeholder of an input box to give users examples of what can be entered
 
+[Live Example](http://noolan.github.io/exempli-gratia)
+
 ________________________________________________________________________________________
 
 Usage
